@@ -1,9 +1,9 @@
 import Vapor
 import JWT
 
-enum Role: String, Codable, CaseIterable { case user, admin }
+public enum Role: String, Codable, CaseIterable { case user, admin }
 
-struct UserJWT: JWTPayload, Authenticatable {
+public struct UserJWT: JWTPayload, Authenticatable {
 
     // User info
     let kid: String
