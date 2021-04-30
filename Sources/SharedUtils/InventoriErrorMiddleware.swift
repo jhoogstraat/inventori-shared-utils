@@ -9,7 +9,7 @@ internal struct ErrorResponse: Codable {
     var reason: String
 }
 
-func InventoriErrorMiddleware(environment: Environment) -> ErrorMiddleware {
+public func InventoriErrorMiddleware(environment: Environment) -> ErrorMiddleware {
     return .init({ req, error in
 
         // variables to determine
