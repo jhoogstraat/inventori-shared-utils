@@ -15,7 +15,7 @@ public struct UserJWT: JWTPayload, Authenticatable {
     var iat: IssuedAtClaim
     var exp: ExpirationClaim
     
-    init(user_id: UUID, role: Role, key: String) {
+    public init(user_id: UUID, role: Role, key: String) {
         self.user_id = user_id
         self.kid = key
         self.role = role
