@@ -25,7 +25,7 @@ public struct UserJWT: JWTPayload, Authenticatable {
     }
 
     /// Verifies any claims. Is called when Vapor converts the token string to a Payload
-    func verify(using signer: JWTSigner) throws {
+    public func verify(using signer: JWTSigner) throws {
         guard iss == "LITHAT" else {
             throw JWTError.claimVerificationFailure(name: "iss", reason: "Not matching")
         }
