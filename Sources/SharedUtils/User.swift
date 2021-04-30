@@ -6,17 +6,17 @@ public enum Role: String, Codable, CaseIterable { case user, admin }
 public struct UserJWT: JWTPayload, Authenticatable {
 
     // User info
-    let kid: String
-    let user_id: UUID
-    let role: Role
+    public let user_id: UUID
+    public let role: Role
     
     // Claims
-    var iss: IssuerClaim
-    var iat: IssuedAtClaim
-    var exp: ExpirationClaim
+    public let kid: String
+    public let iss: IssuerClaim
+    public let iat: IssuedAtClaim
+    public let exp: ExpirationClaim
     
-    public init(user_id: UUID, role: Role, key: String) {
-        self.user_id = user_id
+    public init(userId: UUID, role: Role, key: String) {
+        self.user_id = userId
         self.kid = key
         self.role = role
         self.iss = "LITHAT"
